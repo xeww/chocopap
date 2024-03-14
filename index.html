@@ -1,49 +1,108 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <title>Choco pap</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!-- HEADER-->
-        <div id="header">
-            <div id="header-logo">
-                <img src="images/logo.png" alt="logo" width="70" height="70">
+
+<head>
+    <title>Choco pap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- SWIPER FILES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- HEADER-->
+    <div id="header">
+        <div id="header-logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="logo">
+            </a>
+        </div>
+        <div id="header-right">
+            <div class="text-style1">
+                <p><a href="index.html">Accueil</a></p>
             </div>
-            <div id="header-right">
-                <div class="text-style1">
-                    <p><a href="index.html">Accueil</a></p></div>
-                <div class="text-style1">
-                    <p><a href="boutique.html">Boutique</a></p></div>
-                <div class="panier">
-                    <img src="images/panier.png" alt="panier" width="70" height="70">
+            <div class="text-style1">
+                <p><a href="boutique.html">Boutique</a></p>
+            </div>
+            <div id="cart">
+                <span class="text-style2">2</span>
+                <!-- CART ICON SVG -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAROUSSEL -->
+    <div id="carrousel">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/accueil1.jpg" alt="Accueil1"></div>
+                <div class="swiper-slide"><img src="images/accueil2.jpg" alt="Accueil2"></div>
+                <div class="swiper-slide"><img src="images/accueil3.jpg" alt="Accueil3"></div>
+            </div>
+
+            <div id="inside-carrousel">
+                <h1 class="text-style1">CHOCO PAP</h1>
+                <div class="text-style2">
+                    <form action="./boutique.html">
+                        <button type="submit" class="text-style1 button-style1">VOIR LA BOUTIQUE</button>
+                    </form>
                 </div>
             </div>
+
+            <div class="swiper-pagination"></div>
         </div>
-        <!-- CAROUSSEL -->
-        <div id="carrousel">
-            <!-- TODO: Carrousel à créer -->
-            <!--<img src="images/accueil1.jpg" alt="Accueil1">
-            <img src="images/accueil2.jpg" alt="Accueil2">
-            <img src="images/accueil3.jpg" alt="Accueil3">-->
-            <div class="text-style2"><a href="boutique.html">VOIR LA BOUTIQUE</a></div>
-        </div>
-        <!-- FOOTER -->
-        <div id="footer">
-            <div id="informations">
-                <div class="text-style3">Choco pap</div>
-                <div class="text-style4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</div>
-            </div>
-            <div id="contact">
-                <div class="text-style3">Contact</div>
-                <div class="text-style4">Adresse : 51 rue du chocolat 75000 Paris Téléphone: 01 23 45 67 89
-                    Horaires: 9h00-17h00 du Lundi au vendredi</div>
-            </div>
-            <div id="social-network">
-                <div><img src="images/logo-facebook.png" width="40" height="40" alt="facebook"></div>
-                <div><img src="images/logo-instagram.jpeg" width="40" height="40" alt="instagram"></div>
-                <div><img src="images/logo-twitter.png" width="40" height="40" alt="twitter"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer">
+        <div id="informations">
+            <div class="text-style3">Choco pap</div>
+            <div class="text-style4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua
             </div>
         </div>
-    </body>
+        <div id="contact">
+            <div class="text-style3">Contact</div>
+            <div class="text-style4">
+                Adresse : 51 rue du chocolat 75000 Paris Téléphone: 01 23 45 67 89
+                Horaires: 9h00-17h00 du Lundi au vendredi
+            </div>
+        </div>
+        <div id="social-network">
+            <div>
+                <!-- facebook -->
+            </div>
+            <div>
+                <!-- instagram -->
+            </div>
+            <div>
+                <!-- twitter -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            autoplay: {
+                delay: 5000,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+
+</body>
+
 </html>

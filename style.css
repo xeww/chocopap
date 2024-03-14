@@ -1,74 +1,192 @@
 @import url("https://fonts.googleapis.com/css?family=Fjalla+One");
 @import url("https://fonts.googleapis.com/css?family=Droid+Serif");
 
+/* GLOBAL PARAMETERS */
+:root {
+    --white: #FFFFFF;
+    --blue: #55C0CF;
+    --dark-brown: #2C1E1E;
+    --black: #1F1615;
+    --brown: #B65F28;
+    --yellow: #FFD543;
+    --dark-yellow: #ddb00f;
+    --swiper-theme-color: var(--yellow);
+    --swiper-pagination-bullet-inactive-color: rgba(255, 99, 71, 0);
+    --swiper-pagination-bullet-horizontal-gap: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
 
 a {
     text-decoration: none;
 }
 
 body {
-    background-color: #B65F28;
+    background-color: var(--brown);
+}
+
+/* TITLE */
+.text-style1 {
+    font-family: 'Fjalla One';
+
+    & a {
+        color: var(--white);
+    }
+}
+
+/* TEXT BODY */
+.text-style2 {
+    font-family: 'Droid Serif';
 }
 
 .content {
-    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white);
 }
 
-#header, #footer, .content {
+/* FIRST BUTTON STYLE */
+.button-style1 {
+    border: none;
+    outline: none;
+    background-color: var(--white);
+    padding: 15px 20px;
+    font-size: 1.5em;
+    color: var(--dark-brown);
+    border-radius: 5px;
+    transition: all 0.1s ease;
+    box-shadow: 0px 5px 0px 0px var(--yellow);
+
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    &:active {
+        transform: translateY(5px);
+        box-shadow: 0px 0px 0px 0px;
+    }
+}
+
+/* HEADER */
+#header {
     display: flex;
     justify-content: space-between;
 }
 
-#header-right, #social-network {
+#header-right {
     display: flex;
     align-items: center;
+    gap: 40px;
 }
 
 #header-right p {
-    margin-left: 20px;
+    font-size: 1.65em;
+    transition: transform 0.1s ease;
+    text-decoration: underline solid var(--yellow);
+
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
-#header img {
-    margin: 20px;
+#header-logo img {
+    width: 70px;
+    margin: 15px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: rotate(-30deg) scale(1.03);
+    }
 }
 
-#social-network img {
-    margin: 5px;
-}
-
-#informations, #contact {
-    margin: 20px;
-}
-
-
-.text-style1 {
+#cart {
+    display: flex;
+    align-items: center;
+    color: var(--white);
     font-size: 20px;
-    font-family: 'Fjalla One';
-    
-}
-.text-style1 a {
-    color: #FFFFFF;
+    margin-right: 20px;
+    transition: transform 0.1s ease;
+
+    & svg {
+        width: 35px;
+        fill: var(--white);
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05);
+    }
 }
 
-.text-style2 {
-    display: inline-block;
-    font-family: 'Droid Serif';
-    padding: 10px;
-    border: 2px solid;
+/* END OF HEADER */
+
+/* MAIN PAGE */
+.swiper {
+    width: 100%;
+    height: 88vh;
+
+    & img {
+        width: 100%;
+    }
 }
 
-.text-style2 a {
-    color: #2C1E1E;
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.text-style3 {
-    font-size: 18px;
-}
-.text-style3, .text-style4 {
-    color: #2C1E1E;
-    font-family: 'Droid Serif';
+.swiper-pagination-bullet {
+    border: 1px solid var(--black);
+    opacity: 1;
+    width: 16px;
+    height: 16px;
 }
 
+#inside-carrousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 2;
+
+    & h1 {
+        font-size: 5em;
+        color: var(--yellow);
+        text-decoration: underline overline var(--brown);
+    }
+}
+
+/* END OF MAIN PAGE */
+
+/* FOOTER */
+#footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+#informations,
+#contact {
+    margin: 20px;
+}
+
+#social-network {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* END OF FOOTER */
+
+/* STORE */
 .zone-filtre {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -76,7 +194,7 @@ body {
 
 #filter {
     border: 2px solid;
-    border-color: #2C1E1E;
+    border-color: var(--dark-brown);
     padding: 20px;
 }
 
@@ -84,6 +202,3 @@ body {
     display: table;
     padding: 10px;
 }
-
-
-
