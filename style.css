@@ -135,9 +135,10 @@ body {
 
 #menu {
     display: none;
+    margin: 15px;
 
     & svg {
-        width: 50px;
+        width: 60px;
         fill: var(--white);
     }
 
@@ -148,6 +149,24 @@ body {
 }
 
 /* END OF HEADER */
+
+/* TOGGLEABLE MENU */
+#toggle-menu {
+    display: none;
+}
+
+#toggle-menu div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 20px;
+
+    & a {
+        font-size: 1.7em;
+        text-decoration: underline solid var(--white);
+        color: var(--white);
+    }
+}
 
 /* MAIN PAGE */
 .swiper {
