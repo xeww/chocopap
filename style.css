@@ -42,12 +42,6 @@ body {
     font-family: 'Droid Serif';
 }
 
-.content {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--white);
-}
-
 /* FIRST BUTTON STYLE */
 .button-style1 {
     border: none;
@@ -75,6 +69,11 @@ body {
     width: 100%;
     background-color: var(--yellow);
     height: 2px;
+}
+
+/* CHECKBOX STYLE */
+input[type="checkbox"] {
+    accent-color: var(--yellow);
 }
 
 /* HEADER */
@@ -152,7 +151,8 @@ body {
 
 /* TOGGLEABLE MENU */
 #toggle-menu {
-    display: none;
+    max-height: 0;
+    transition: all 0.3s ease;
 }
 
 #toggle-menu div:nth-child(2) {
@@ -279,6 +279,54 @@ body {
 /* END OF FOOTER */
 
 /* STORE */
+#store {
+    background-color: hsl(0, 0%, 97%);
+    padding: 40px 40px 40px 5px;
+}
+
+#store h1 {
+    text-align: center;
+    font-size: 2.8em;
+    color: var(--yellow);
+    margin-bottom: 2%;
+}
+
+#store-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+#all-products {
+    display: flex;
+    gap: 10%;
+    flex-wrap: wrap;
+}
+
+.single-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 30px;
+
+    & img {
+        width: 250px;
+        height: 250px;
+        border: 3px solid var(--yellow);
+        border-radius: 8px;
+        transition: border-color 0.1s ease, transform 0.1s ease;
+
+        &:hover {
+            border-color: var(--dark-yellow);
+            transform: scale(1.02);
+        }
+    }
+
+    & button {
+        font-size: 1.1em;
+    }
+}
+
 .zone-filtre {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -288,8 +336,11 @@ body {
     border: 2px solid;
     border-color: var(--dark-brown);
     padding: 20px;
+    width: 10%;
+    height: 10%;
 }
 
+/* PRODUCT PAGE */
 .table {
     display: table;
     padding: 10px;
