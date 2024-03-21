@@ -341,9 +341,49 @@ input[type="checkbox"] {
 }
 
 /* PRODUCT PAGE */
-.table {
-    display: table;
-    padding: 10px;
+#product-info {
+    background-color: hsl(0, 0%, 97%);
+}
+
+#product-top {
+    display: flex;
+    align-items: center;
+    gap: 8%;
+    padding: 7%;
+    padding-bottom: 3%;
+}
+
+#product-top img {
+    border: 3px solid var(--yellow);
+    border-radius: 6px;
+    width: 400px;
+    height: 400px;
+}
+
+#product-top div {
+    width: 40%;
+
+    & * {
+        margin: 10px;
+    }
+}
+
+#product-top h1 {
+    color: var(--yellow);
+}
+
+#product-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding: 7%;
+    padding-top: 5%;
+    padding-bottom: 30%;
+}
+
+#product-bottom h2 {
+    color: var(--yellow);
 }
 
 /* FIRST BREAKPOINT */
@@ -367,10 +407,31 @@ input[type="checkbox"] {
     #footer-content {
         justify-content: space-around;
     }
+
+    #product-top {
+        flex-direction: column-reverse;
+        padding: 1%;
+        padding-bottom: 3%;
+        gap: 16px;
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+
+        & div {
+            width: 100%;
+        }
+    }
+
+    #product-bottom {
+        padding: 3%;
+        padding-bottom: 4%;
+    }
 }
 
 /* SECOND BREAKPOINT */
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 
     #header-right div:nth-child(1),
     #header-right div:nth-child(2),
