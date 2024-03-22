@@ -1,16 +1,17 @@
 let products = [];
 
-(async () => {
-    const response = await fetch("./products.json");
-    let result = await response.json();
+document.addEventListener("DOMContentLoaded",
+    async () => {
+        const response = await fetch("./products.json");
+        let result = await response.json();
 
-    result.forEach(element => {
-        products[element.id] = element;
+        result.forEach(element => {
+            products[element.id] = element;
+        });
+
+        displayProductElements();
+        displayProductInfo();
     });
-
-    displayProductElements();
-    displayProductInfo();
-})();
 
 function displayProductElements() {
     products.forEach((element) => {
@@ -54,6 +55,7 @@ function createProductElement(id, img, name, price, note) {
         div.appendChild(p2);
         div.appendChild(p3);
         div.appendChild(button);
+
         allProducts.appendChild(div);
     }
 }

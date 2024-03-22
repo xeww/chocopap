@@ -5,7 +5,8 @@
     <title>Choco pap</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/store.css">
     <script src="./menu.js" defer></script>
     <script src="./index.js" defer></script>
 </head>
@@ -58,59 +59,59 @@
         <div id="store-wrapper">
             <!-- FILTRES -->
             <div id="filter">
-                <div>Cat&eacute;gories</div>
-                <div class="zone-filtre">
+                <div id="category-filter" class="zone-filtre">
+                    <p class="text-style1">Catégories</p>
                     <div>
-                        <input type="checkbox" id="ch-all">
-                        <label for="ch-all">Tous</label>
+                        <input type="checkbox" id="ch-all" checked>
+                        <label for="ch-all" class="text-style2">Tous</label>
                     </div>
                     <div>
                         <input type="checkbox" id="ch-chocolat-blanc">
-                        <label for="ch-chocolat-blanc">Chocolat blanc</label>
+                        <label for="ch-chocolat-blanc" class="text-style2">Chocolat blanc</label>
                     </div>
                     <div>
                         <input type="checkbox" id="ch-chocolat-lait">
-                        <label for="ch-chocolat-lait">Chocolat au lait</label>
+                        <label for="ch-chocolat-lait" class="text-style2">Chocolat au lait</label>
                     </div>
                     <div>
                         <input type="checkbox" id="ch-chocolat-noir">
-                        <label for="ch-chocolat-noir">Chocolat noir</label>
+                        <label for="ch-chocolat-noir" class="text-style2">Chocolat noir</label>
                     </div>
                     <div>
                         <input type="checkbox" id="ch-noix">
-                        <label for="ch-noix">Noix/Noisette</label>
+                        <label for="ch-noix" class="text-style2">Noix/Noisette</label>
                     </div>
                     <div>
                         <input type="checkbox" id="ch-fruit">
-                        <label for="ch-fruit">Fruit</label>
+                        <label for="ch-fruit" class="text-style2">Fruit</label>
                     </div>
                     <div>
                         <input type="checkbox" id="ch-caramel">
-                        <label for="ch-caramel">Caramel</label>
+                        <label for="ch-caramel" class="text-style2">Caramel</label>
                     </div>
                     <div>
                         <input type="checkbox" id="ch-liqueur">
-                        <label for="ch-liqueur">Liqueur</label>
+                        <label for="ch-liqueur" class="text-style2">Liqueur</label>
                     </div>
                 </div>
-                <div>Prix</div>
-                <div class="zone-filtre">
+                <div id="price-filter" class="zone-filtre">
+                    <p class="text-style1">Prix (€)</p>
                     <div>
                         <div>
-                            <span>Prix min</span>
-                            <input type="number" id="prix-min">
+                            <span class="text-style2">Prix min</span>
+                            <input type="number" id="prix-min" value="1">
                         </div>
                         <div>
-                            <span>Prix max</span>
-                            <input type="number" id="prix-max">
+                            <span class="text-style2">Prix max</span>
+                            <input type="number" id="prix-max" value="100">
                         </div>
                     </div>
                 </div>
-                <div>Notes</div>
-                <div class="zone-filtre">
+                <div id="note-filter" class="zone-filtre">
+                    <p class="text-style1">Notes</p>
                     <div>
                         <div>
-                            <span>Note min</span>
+                            <span class="text-style2">Note min</span>
                             <select>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -120,13 +121,13 @@
                             </select>
                         </div>
                         <div>
-                            <span>Note max</span>
+                            <span class="text-style2">Note max</span>
                             <select>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
-                                <option value="5">5</option>
+                                <option value="5" selected>5</option>
                             </select>
                         </div>
                     </div>
