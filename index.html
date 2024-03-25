@@ -12,9 +12,11 @@
 
     <link rel="stylesheet" href="./css/global.css">
     <link rel="stylesheet" href="./css/welcome.css">
+    <link rel="stylesheet" href="./css/basket.css">
 
-    <script src="./menu.js" defer></script>
-    <script src="./index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@zerodevx/svelte-toast@0" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
+    <script src="./js/menu.js" defer></script>
 </head>
 
 <body>
@@ -137,15 +139,48 @@
         </div>
     </div>
 
+    <!-- BASKET -->
+    <div id="basket">
+        <div id="basket-top">
+            <!-- CLOSE BUTTON -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+            </svg>
+            <p class="text-style1">PANIER</p>
+        </div>
+        <div id="basket-middle">
+            <div class="basket-product" id="basket-product-ref">
+                <!-- REMOVE FROM BASKET BUTTON -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+                <img src="" alt="">
+                <div>
+                    <p class="text-style2"></p> <!-- PRODUCT NAME -->
+                    <p class="text-style2"></p> <!-- PRODUCT PRICE -->
+                </div>
+                <input type="number" value="1"> <!-- QUANTITY -->
+            </div>
+        </div>
+        <div id="basket-bottom">
+            <p class="text-style1">TOTAL: <span></span> €</p>
+            <button class="text-style1 button-style1" id="reset-basket-btn">REINITIALISER LE PANIER</button>
+            <button class="text-style1 button-style1">VALIDER LE PANIER</button>
+        </div>
+    </div>
+
     <!-- Initialize Swiper -->
     <script>
         var swiper = new Swiper(".mySwiper", {
+            rewind: true,
             autoplay: {
                 delay: 5000,
             },
             pagination: {
                 el: ".swiper-pagination",
-                clickable: true,
+                clickable: true
             },
         });
     </script>
