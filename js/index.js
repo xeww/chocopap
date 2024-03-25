@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded",
 );
 
 const toastApp = new SvelteToast({
-    target: document.body,
+    target: document.body
 });
 
 function sendToast(message) {
@@ -78,12 +78,24 @@ function addProductToBasket(product, quantity) {
     exportBasket();
 }
 
+function removeProductFromBasket(bpid) {
+    for (let i = 0; i <= basket.length; i++) {
+        let bp = basket[i];
+        if (bp) {
+            if (bp.id === bpid) {
+                basket.splice(i, 1);
+            }
+        }
+    }
+    exportBasket();
+}
+
 function getBasketTotalPrice() {
     let count = 0;
     basket.forEach((bp) => {
         count += (bp.pdt.price * bp.qty);
     });
-    return count;
+    return count.toFixed(2);
 }
 
 function updateBasketDisplay() {
@@ -102,6 +114,7 @@ function updateBasketDisplay() {
         // adding elements
         basket.forEach((pr) => {
             let refClone = reference.cloneNode(true);
+            refClone.setAttribute("data-bpid", pr.id);
 
             refClone.removeAttribute("id");
             refClone.style.display = "flex";
@@ -248,6 +261,41 @@ resetBasketButton.addEventListener("click", () => {
     updateBasketDisplay();
     sendToast("Panier réinitialisé!");
 });
+
+// BASKET PRODUCT INTEREACTIONS
+let basketMiddle = document.getElementById("basket-middle");
+basketMiddle.addEventListener("click", (a) => {
+    let el = a.target;
+    if (el.parentNode && el.parentNode.classList.contains("basket-product")) {
+        let bpid = el.parentNode.getAttribute("data-bpid");
+        if (el.tagName === "svg") {
+            removeProductFromBasket(bpid);
+            updateBasketDisplay();
+        }
+    }
+});
+
+let qteInput = document.getElementById("qte");
+if (qteInput) {
+    qteInput.addEventListener("change", () => {
+        if (qteInput.value <= 0) {
+            qteInput.value = 1;
+        }
+    });
+
+    let addToBasketBtn = document.querySelector("#product-top button");
+    if (addToBasketBtn) {
+        addToBasketBtn.addEventListener("click", () => {
+            let params = new URLSearchParams(window.location.search);
+            let product = getProductById(params.get("id"));
+            if (product) {
+                sendToast("Ajouté au panier!");
+                addProductToBasket(product, Number(qteInput.value));
+                updateBasketDisplay();
+            }
+        });
+    }
+}
 
 document.addEventListener("click", (a) => {
     let el = a.target;

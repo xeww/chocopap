@@ -64,9 +64,12 @@
     width: 40px;
     height: 40px;
     fill: rgb(224, 70, 43);
+    transition: all 0.1s ease;
 
     &:hover {
         cursor: pointer;
+        fill: rgb(207, 59, 33);
+        transform: scale(1.05)
     }
 }
 
@@ -78,7 +81,12 @@
 }
 
 #basket-middle input {
-    width: 30px;
+    width: 35px;
+    height: 20px;
+    border: 2px solid var(--yellow);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.1em;
 }
 
 #basket-bottom {
