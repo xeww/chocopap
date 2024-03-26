@@ -8,9 +8,11 @@ menuButton.addEventListener("click", () => {
         isMenuToggled = false;
         menu.style.maxHeight = "0";
         menuContent.style.visibility = "hidden";
+        menuButton.style.rotate = "0deg";
     } else {
         isMenuToggled = true;
         menu.style.maxHeight = "200px";
         menuContent.style.visibility = "visible";
+        menuButton.style.rotate = "90deg";
     }
 });

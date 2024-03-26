@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/basket.css">
 
     <script src="https://cdn.jsdelivr.net/npm/@zerodevx/svelte-toast@0" defer></script>
-    <script type="module" src="./js/index.js" defer></script>
+    <script src="./js/index.js" defer></script>
     <script src="./js/menu.js" defer></script>
 </head>
 
@@ -35,7 +35,7 @@
                 <p><a href="boutique.html">Boutique</a></p>
             </div>
             <div id="cart">
-                <span class="text-style2">2</span>
+                <span class="text-style1">0</span>
                 <!-- CART ICON SVG -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                     <path
@@ -56,7 +56,14 @@
         <div id="toggle-menu-content">
             <a href="index.html" class="text-style1">Accueil</a>
             <a href="boutique.html" class="text-style1">Boutique</a>
-            <a href="#" class="text-style1">Panier</a>
+            <div id="m-cart">
+                <p href="#" class="text-style1">Panier</p>
+                <p class="text-style1">0</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
+                </svg>
+            </div>
         </div>
     </div>
 
@@ -156,7 +163,7 @@
                     <path
                         d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                 </svg>
-                <img src="" alt="">
+                <img src="./images/logo.png" alt="placeholder">
                 <div>
                     <p class="text-style2"></p> <!-- PRODUCT NAME -->
                     <p class="text-style2"></p> <!-- PRODUCT PRICE -->

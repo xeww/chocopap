@@ -27,11 +27,6 @@ body {
     background-color: var(--brown);
 }
 
-::selection {
-    background-color: transparent;
-    color: inherit;
-}
-
 /* TITLE */
 .text-style1 {
     font-family: 'Fjalla One';
@@ -142,6 +137,7 @@ input[type="checkbox"] {
 #menu {
     display: none;
     margin: 15px;
+    transition: rotate 0.3s ease;
 
     & svg {
         width: 60px;
@@ -226,12 +222,36 @@ input[type="checkbox"] {
     margin: 10px;
     gap: 20px;
     transition: all 0.3s ease;
+}
 
-    & a {
-        font-size: 1.7em;
-        text-decoration: underline solid var(--white);
-        color: var(--white);
+#toggle-menu-content a,
+#toggle-menu-content p:nth-child(1) {
+    font-size: 1.7em;
+    text-decoration: underline solid var(--white);
+    color: var(--white);
+    transition: color 0.3 ease;
+
+    &:hover {
+        cursor: pointer;
     }
+}
+
+#m-cart {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+#m-cart p:nth-child(2) {
+    font-size: 1.5em;
+    color: var(--white);
+    margin-left: 8px;
+}
+
+#m-cart svg {
+    width: 30px;
+    height: 30px;
+    fill: var(--white);
 }
 
 @media (max-width: 1000px) {

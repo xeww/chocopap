@@ -29,7 +29,7 @@
                 <p><a href="boutique.html">Boutique</a></p>
             </div>
             <div id="cart">
-                <span class="text-style2">2</span>
+                <span class="text-style1">0</span>
                 <!-- CART ICON SVG -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                     <path
@@ -50,7 +50,14 @@
         <div id="toggle-menu-content">
             <a href="index.html" class="text-style1">Accueil</a>
             <a href="boutique.html" class="text-style1">Boutique</a>
-            <a href="#" class="text-style1">Panier</a>
+            <div id="m-cart">
+                <p class="text-style1">Panier</p>
+                <p class="text-style1">0</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path
+                        d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
+                </svg>
+            </div>
         </div>
     </div>
 
@@ -61,60 +68,62 @@
         <div id="store-wrapper">
             <!-- FILTRES -->
             <div id="filter">
-                <div id="category-filter" class="zone-filtre">
-                    <p class="text-style1">Catégories</p>
-                    <div>
-                        <input type="checkbox" id="ch-all" checked>
-                        <label for="ch-all" class="text-style2">Tous</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="ch-chocolat-blanc">
-                        <label for="ch-chocolat-blanc" class="text-style2">Chocolat blanc</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="ch-chocolat-lait">
-                        <label for="ch-chocolat-lait" class="text-style2">Chocolat au lait</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="ch-chocolat-noir">
-                        <label for="ch-chocolat-noir" class="text-style2">Chocolat noir</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="ch-noix">
-                        <label for="ch-noix" class="text-style2">Noix/Noisette</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="ch-fruit">
-                        <label for="ch-fruit" class="text-style2">Fruit</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="ch-caramel">
-                        <label for="ch-caramel" class="text-style2">Caramel</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="ch-liqueur">
-                        <label for="ch-liqueur" class="text-style2">Liqueur</label>
+                <div id="category-filter" class="filter-zone">
+                    <p class="text-style1">Catégories <span class="filter-span">-</span></p>
+                    <div class="filter-hide">
+                        <div>
+                            <input type="checkbox" id="ch-all" checked>
+                            <label for="ch-all" class="text-style2">Tous</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ch-chocolat-blanc">
+                            <label for="ch-chocolat-blanc" class="text-style2">Chocolat blanc</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ch-chocolat-lait">
+                            <label for="ch-chocolat-lait" class="text-style2">Chocolat au lait</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ch-chocolat-noir">
+                            <label for="ch-chocolat-noir" class="text-style2">Chocolat noir</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ch-noix">
+                            <label for="ch-noix" class="text-style2">Noix/Noisette</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ch-fruit">
+                            <label for="ch-fruit" class="text-style2">Fruit</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ch-caramel">
+                            <label for="ch-caramel" class="text-style2">Caramel</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="ch-liqueur">
+                            <label for="ch-liqueur" class="text-style2">Liqueur</label>
+                        </div>
                     </div>
                 </div>
-                <div id="price-filter" class="zone-filtre">
-                    <p class="text-style1">Prix (€)</p>
-                    <div>
+                <div id="price-filter" class="filter-zone">
+                    <p class="text-style1">Prix (€) <span class="filter-span">-</span></p>
+                    <div class="filter-hide">
                         <div>
                             <span class="text-style2">Prix min</span>
-                            <input type="number" id="prix-min" value="1">
+                            <input type="number" id="price-min-input" value="1" class="price-input text-style1">
                         </div>
                         <div>
                             <span class="text-style2">Prix max</span>
-                            <input type="number" id="prix-max" value="100">
+                            <input type="number" id="price-max-input" value="50" class="price-input text-style1">
                         </div>
                     </div>
                 </div>
-                <div id="note-filter" class="zone-filtre">
-                    <p class="text-style1">Notes</p>
-                    <div>
+                <div id="note-filter" class="filter-zone">
+                    <p class="text-style1">Notes <span class="filter-span">-</span></p>
+                    <div class="filter-hide">
                         <div>
                             <span class="text-style2">Note min</span>
-                            <select>
+                            <select id="note-min-select" class="note-select text-style1">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -124,7 +133,7 @@
                         </div>
                         <div>
                             <span class="text-style2">Note max</span>
-                            <select>
+                            <select id="note-max-select" class="note-select text-style1">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -221,7 +230,7 @@
                     <path
                         d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
                 </svg>
-                <img src="" alt="">
+                <img src="./images/logo.png" alt="placeholder">
                 <div>
                     <p class="text-style2"></p> <!-- PRODUCT NAME -->
                     <p class="text-style2"></p> <!-- PRODUCT PRICE -->
