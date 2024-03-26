@@ -303,7 +303,7 @@ function displayProductInfo() {
     if (productInfoElement) {
         if (params.has("id")) {
             let id = Number(params.get("id"));
-            if (isNaN(id) || id < 0 || id >= products.length) {
+            if (isNaN(id) || id < 0 || id >= products.length || !id) {
                 er();
             } else {
                 let product = getProductById(id);
@@ -313,15 +313,17 @@ function displayProductInfo() {
                 let description = document.getElementById("p-product-description");
                 let ingredients = document.querySelector("#product-bottom p");
 
-                if (image) {
-                    image.src = product.image;
-                    image.alt = product.title;
-                }
+                if (product) {
+                    if (image) {
+                        image.src = product.image;
+                        image.alt = product.title;
+                    }
 
-                if (name) name.innerHTML = product.title;
-                if (price) price.innerHTML = product.price + " €";
-                if (description) description.innerHTML = product.description;
-                if (ingredients) ingredients.innerHTML = product.ingredients;
+                    if (name) name.innerHTML = product.title;
+                    if (price) price.innerHTML = product.price + " €";
+                    if (description) description.innerHTML = product.description;
+                    if (ingredients) ingredients.innerHTML = product.ingredients;
+                }
             }
         } else {
             er();
